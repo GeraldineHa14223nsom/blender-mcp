@@ -16,6 +16,7 @@ def main():
     Troubleshooting:
         - If the server fails to connect, try restarting the addon in Blender.
         - On Windows, firewall rules may block the connection on port 9876.
+        - On macOS, you may need to allow the connection in System Settings > Privacy & Security.
     """
     # Print a startup message so it's clear the server is launching
     print("Starting Blender MCP server...", file=sys.stderr)
