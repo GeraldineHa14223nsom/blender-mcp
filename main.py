@@ -25,6 +25,8 @@ def main():
     print("Starting Blender MCP server...", file=sys.stderr)
     print(f"Tip: Ensure Blender is running with the MCP addon enabled on port {DEFAULT_PORT}.", file=sys.stderr)
     print("Tip: Check Edit > Preferences > Add-ons and search for 'Blender MCP'.", file=sys.stderr)
+    # Personal note: I also find it helpful to open Blender's system console
+    # (Window > Toggle System Console) to see addon-side logs during debugging.
     server_main()
 
 if __name__ == "__main__":
