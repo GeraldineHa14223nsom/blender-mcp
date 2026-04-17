@@ -2,6 +2,7 @@ from blender_mcp.server import main as server_main
 import sys
 
 DEFAULT_PORT = 9876
+SECOND_INSTANCE_PORT = 9877
 
 def main():
     """Entry point for the blender-mcp package.
@@ -28,7 +29,8 @@ def main():
     # Personal note: I also find it helpful to open Blender's system console
     # (Window > Toggle System Console) to see addon-side logs during debugging.
     # Personal note: On my machine I sometimes run two Blender instances, so I
-    # occasionally change DEFAULT_PORT to 9877 for the second one to avoid conflicts.
+    # occasionally change DEFAULT_PORT to SECOND_INSTANCE_PORT (9877) for the
+    # second one to avoid conflicts. Extracted it as a named constant for clarity.
     server_main()
 
 if __name__ == "__main__":
