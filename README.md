@@ -57,6 +57,8 @@ The system consists of two main components:
 > **My setup:** Running on macOS Sequoia with Blender 4.3. Also confirmed working on Ubuntu 22.04.
 >
 > **Tip:** If Claude stops responding to Blender commands, try restarting the socket server from the Blender addon panel before reinstalling anything — saves a lot of time.
+>
+> **Another tip:** On Ubuntu, if the addon panel doesn't appear, make sure you enabled it under Edit > Preferences > Add-ons after installing addon.py.
 
 ### Prerequisites
 
@@ -74,10 +76,5 @@ powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 and then add uv to the user path in Windows (you may need to restart Claude Desktop after):
 ```powershell
-$localBin = "$env:USERPROFILE\.local\bin"
-$userPath = [Environment]::GetEnvironmentVariable("Path", "User")
-[Environment]::SetEnvironmentVariable("Path", "$userPath;$localBin", "User")
-```
-
-Other
+$localBin = "$env:US
 ```
