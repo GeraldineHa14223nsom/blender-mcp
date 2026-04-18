@@ -55,6 +55,8 @@ The system consists of two main components:
 > **Personal note:** I tested this on Blender 4.2 and Python 3.12 — works great. The uv install step is easy to skip but don't, it'll cause confusing errors later.
 >
 > **My setup:** Running on macOS Sequoia with Blender 4.3. Also confirmed working on Ubuntu 22.04.
+>
+> **Tip:** If Claude stops responding to Blender commands, try restarting the socket server from the Blender addon panel before reinstalling anything — saves a lot of time.
 
 ### Prerequisites
 
@@ -77,4 +79,5 @@ $userPath = [Environment]::GetEnvironmentVariable("Path", "User")
 [Environment]::SetEnvironmentVariable("Path", "$userPath;$localBin", "User")
 ```
 
-Otherwise installation instructions are on their website: [Install uv](https://docs.astral.sh/uv/getting-s
+Other
+```
