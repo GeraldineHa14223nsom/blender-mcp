@@ -88,7 +88,8 @@ class BlenderMCPServer:
         if self.server_thread:
             try:
                 if self.server_thread.is_alive():
-                    self.server_thread.join(timeout=1.0)
+                    # Increased join timeout from 1.0 to 2.0s to give the thread more time to exit cleanly
+                    self.server_thread.join(timeout=2.0)
             except:
                 pass
             self.server_thread = None
@@ -98,9 +99,4 @@ class BlenderMCPServer:
     def _server_loop(self):
         """Main server loop in a separate thread"""
         print("Server thread started")
-        self.socket.settimeout(self._accept_timeout)  # Timeout to allow for stopping
-
-        while self.running:
-            try:
-                # Accept new connection
-          
+        self.socket.settimeout(self._accept_timeout)
