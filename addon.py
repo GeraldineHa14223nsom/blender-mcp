@@ -46,6 +46,8 @@ class BlenderMCPServer:
         self.server_thread = None
         # Increase connection backlog from 1 to 5 to handle multiple rapid reconnects
         self._backlog = 5
+        # Timeout for socket accept(); keeping this short so stop() is responsive
+        self._accept_timeout = 0.5
 
     def start(self):
         if self.running:
@@ -96,11 +98,9 @@ class BlenderMCPServer:
     def _server_loop(self):
         """Main server loop in a separate thread"""
         print("Server thread started")
-        self.socket.settimeout(1.0)  # Timeout to allow for stopping
+        self.socket.settimeout(self._accept_timeout)  # Timeout to allow for stopping
 
         while self.running:
             try:
                 # Accept new connection
-                try:
-                    client, address = self.socket.accept()
-                    print(f"Connected to client: {addr
+          
