@@ -53,6 +53,8 @@ The system consists of two main components:
 ## Installation
 
 > **Personal note:** I tested this on Blender 4.2 and Python 3.12 — works great. The uv install step is easy to skip but don't, it'll cause confusing errors later.
+>
+> **My setup:** Running on macOS Sequoia with Blender 4.3. Also confirmed working on Ubuntu 22.04.
 
 ### Prerequisites
 
