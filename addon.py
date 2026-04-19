@@ -48,6 +48,8 @@ class BlenderMCPServer:
         self._backlog = 5
         # Timeout for socket accept(); keeping this short so stop() is responsive
         self._accept_timeout = 0.5
+        # Log server lifecycle events with timestamps for easier debugging
+        self._verbose_logging = True
 
     def start(self):
         if self.running:
@@ -97,6 +99,4 @@ class BlenderMCPServer:
         print("BlenderMCP server stopped")
 
     def _server_loop(self):
-        """Main server loop in a separate thread"""
-        print("Server thread started")
-        self.socket.settimeout(self._accept_timeout)
+        """Main server loop in a
