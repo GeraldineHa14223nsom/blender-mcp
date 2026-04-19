@@ -94,9 +94,6 @@ class BlenderMCPServer:
                     self.server_thread.join(timeout=2.0)
             except:
                 pass
+            # Fixed bug: original line was a no-op (`self.server_thread` alone does nothing);
+            # set to None so the reference is released after stopping.
             self.server_thread = None
-
-        print("BlenderMCP server stopped")
-
-    def _server_loop(self):
-        """Main server loop in a
