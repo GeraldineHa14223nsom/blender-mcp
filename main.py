@@ -31,6 +31,9 @@ def main():
     # Personal note: On my machine I sometimes run two Blender instances, so I
     # occasionally change DEFAULT_PORT to SECOND_INSTANCE_PORT (9877) for the
     # second one to avoid conflicts. Extracted it as a named constant for clarity.
+    # Personal note: Added this reminder because I kept forgetting — after a system
+    # sleep/wake cycle, the addon socket can get stuck. A quick disable/enable of
+    # the addon in Blender preferences clears it without needing a full restart.
     server_main()
 
 if __name__ == "__main__":
